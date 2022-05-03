@@ -1,2 +1,2 @@
 
-Copyright (C) 2022 shane schmaltz
+Copyright (C) 2022 Shane Schmaltz
