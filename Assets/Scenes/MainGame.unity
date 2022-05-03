@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13d0e62721e731a47916713e45e4ef50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1126086887}
+  target: {fileID: 22028699}
   lerpSpeed: 2.5
 --- !u!81 &652856017
 AudioListener:
@@ -1414,6 +1414,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 95837876628786348, guid: bedfc2489e233ae479eff548012e1c92,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212167722387132558, guid: bedfc2489e233ae479eff548012e1c92,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 212167722387132558, guid: bedfc2489e233ae479eff548012e1c92,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 212167722387132558, guid: bedfc2489e233ae479eff548012e1c92,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: df658a412de80df46add0126676455d4,
+        type: 3}
     - target: {fileID: 212167722387132558, guid: bedfc2489e233ae479eff548012e1c92,
         type: 3}
       propertyPath: m_SortingLayer
