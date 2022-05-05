@@ -12,9 +12,12 @@ GameObject:
   - component: {fileID: 4662466321313994727}
   - component: {fileID: 4662466321313994726}
   - component: {fileID: 3416996497628230687}
+  - component: {fileID: 2027083731}
+  - component: {fileID: 6197059663958772293}
+  - component: {fileID: 2027083738}
   m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,6 +98,56 @@ MonoBehaviour:
     type: 3}
   fireballSpeed: 10
   fireballLifetime: 5
+--- !u!50 &2027083731
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4662466321313994728}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &6197059663958772293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4662466321313994728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50e01369e16d73a4e8af5960c4ea1c67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+--- !u!58 &2027083738
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4662466321313994728}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.14013845, y: -0.17216992}
+  serializedVersion: 2
+  m_Radius: 0.46796846
 --- !u!1001 &4662466320974035568
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -128,11 +181,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4710395557788888, guid: bedfc2489e233ae479eff548012e1c92, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.02
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4710395557788888, guid: bedfc2489e233ae479eff548012e1c92, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.02
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4710395557788888, guid: bedfc2489e233ae479eff548012e1c92, type: 3}
       propertyPath: m_LocalPosition.z
@@ -205,7 +258,7 @@ PrefabInstance:
     - target: {fileID: 212167722387132558, guid: bedfc2489e233ae479eff548012e1c92,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 212167722387132558, guid: bedfc2489e233ae479eff548012e1c92,
         type: 3}

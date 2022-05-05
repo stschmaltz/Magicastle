@@ -25,10 +25,8 @@ public class Fireball : MonoBehaviour
     {
         GameObject fireball = Instantiate(fireballPrefab, transform.position, Quaternion.identity);
         Rigidbody2D fireballRigidbody = fireball.GetComponent<Rigidbody2D>();
-        // Get the position of the mouse on the screen.
-        Vector3 screenMousePos = Mouse.current.position.ReadValue();
 
-        // Turn that screen position into the actual position in the world.
+        Vector3 screenMousePos = Mouse.current.position.ReadValue();
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(screenMousePos);
 
         // Find out the direction between the player and the mouse pointer.
