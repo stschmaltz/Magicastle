@@ -1,8 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering.UI;
 using UnityEngine.UI;
+
+public enum HealthBarBehaviour
+{
+    AlwaysVisible,
+    VisibleWhenDamaged,
+
+}
 
 public class Health : MonoBehaviour
 {
@@ -10,31 +19,28 @@ public class Health : MonoBehaviour
     [SerializeField] float currentHealth;
     [SerializeField] Slider healthBarSlider;
     [SerializeField] Canvas healthBarUI;
+    [SerializeField] TextMeshProUGUI healthBarText;
+    [SerializeField] HealthBarBehaviour healthBardBehaviour = HealthBarBehaviour.VisibleWhenDamaged;
 
 
     void Start()
     {
         currentHealth = maxHealth;
-        // Debug.Log("OI" + healthBarSlider != null);
-        if (healthBarSlider != null && healthBarUI != null)
+
+        setHealthValue();
+        setHealthText();
+
+        if (healthBarUI != null)
         {
-            healthBarUI.enabled = false;
-            healthBarSlider.value = CalculateHealthValue();
+            healthBarUI.enabled = healthBardBehaviour == HealthBarBehaviour.AlwaysVisible ? true : false;
         }
+
+
+
     }
 
     void Update()
     {
-        // Debug.Log("currentHealth: " + currentHealth);
-        // Debug.Log("maxHealth: " + maxHealth);
-
-        if (healthBarSlider != null)
-        {
-            Debug.Log(CalculateHealthValue());
-
-            healthBarSlider.value = CalculateHealthValue();
-        }
-
         if (healthBarUI != null && currentHealth < maxHealth)
         {
             healthBarUI.enabled = true;
@@ -48,36 +54,50 @@ public class Health : MonoBehaviour
 
     }
 
-    public float CalculateHealthValue()
+    void setHealthValue()
     {
-        return currentHealth / maxHealth * 100;
+        if (healthBarSlider != null)
+        {
+
+            float newValue = currentHealth / maxHealth * 100;
+            healthBarSlider.value = newValue;
+        }
     }
 
 
     void OnTriggerEnter2D(Collider2D other)
     {
         DamageDealer damageDealer = other.GetComponent<DamageDealer>();
-        Debug.Log(other.name);
-        Debug.Log("yoz");
-        Debug.Log(damageDealer != null);
 
 
         if (damageDealer != null)
         {
-
             TakeDamage(damageDealer.GetDamage());
             damageDealer.Hit();
         }
     }
 
+    void setHealthText()
+    {
+        if (healthBarText != null)
+        {
+            float textCurrentHealth = Math.Max(currentHealth, 0);
+
+            healthBarText.text = textCurrentHealth.ToString() + "/" + maxHealth.ToString();
+        }
+    }
+
     void TakeDamage(float damage)
     {
-        Debug.Log("you took " + damage + " damage");
         currentHealth -= damage;
+
 
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
         }
+
+        setHealthValue();
+        setHealthText();
     }
 }

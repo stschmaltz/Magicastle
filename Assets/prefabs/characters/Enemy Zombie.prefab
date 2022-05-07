@@ -79,6 +79,7 @@ MonoBehaviour:
   currentHealth: 100
   healthBarSlider: {fileID: 5652588804392966700}
   healthBarUI: {fileID: 5921219525196225462}
+  ShowHealthBarAfterDamage: 1
 --- !u!58 &2025651391
 CircleCollider2D:
   m_ObjectHideFlags: 0
