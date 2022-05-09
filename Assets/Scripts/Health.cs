@@ -17,10 +17,17 @@ public class Health : MonoBehaviour
 {
     [SerializeField] float maxHealth = 100;
     [SerializeField] float currentHealth;
+    [SerializeField] bool isPlayer = false;
+
+    [Header("Health Bar")]
     [SerializeField] Slider healthBarSlider;
     [SerializeField] Canvas healthBarUI;
     [SerializeField] TextMeshProUGUI healthBarText;
-    [SerializeField] HealthBarBehaviour healthBardBehaviour = HealthBarBehaviour.VisibleWhenDamaged;
+    [SerializeField] HealthBarBehaviour healthBarBehaviour = HealthBarBehaviour.VisibleWhenDamaged;
+
+    [Header("Score")]
+    ScoreKeeper scoreKeeper;
+    [SerializeField] float score = 100;
 
 
     void Start()
@@ -32,11 +39,13 @@ public class Health : MonoBehaviour
 
         if (healthBarUI != null)
         {
-            healthBarUI.enabled = healthBardBehaviour == HealthBarBehaviour.AlwaysVisible ? true : false;
+            healthBarUI.enabled = healthBarBehaviour == HealthBarBehaviour.AlwaysVisible ? true : false;
         }
+    }
 
-
-
+    void Awake()
+    {
+        scoreKeeper = FindObjectOfType<ScoreKeeper>();
     }
 
     void Update()
@@ -94,10 +103,21 @@ public class Health : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Destroy(gameObject);
+            TriggerDeath();
         }
 
         setHealthValue();
         setHealthText();
+    }
+
+    void TriggerDeath()
+    {
+
+        if (!isPlayer)
+        {
+            scoreKeeper.ModifyScore(score);
+        }
+
+        Destroy(gameObject);
     }
 }
