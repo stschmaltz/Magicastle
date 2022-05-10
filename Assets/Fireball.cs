@@ -8,19 +8,6 @@ public class Fireball : MonoBehaviour
     [SerializeField] GameObject fireballPrefab;
     [SerializeField] float fireballSpeed = 10f;
     [SerializeField] float fireballLifetime = 5f;
-
-
-
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-    }
-
-
     public void Fire()
     {
         GameObject fireball = Instantiate(fireballPrefab, transform.position, Quaternion.identity);
@@ -34,11 +21,12 @@ public class Fireball : MonoBehaviour
 
         // Normalize the direction and multiply by bullet speed.
         direction.Normalize();
-        direction *= fireballSpeed;
 
         if (fireballRigidbody != null)
         {
-            fireballRigidbody.velocity = direction;
+            fireballRigidbody.velocity = direction * fireballSpeed;
         }
+
+        Destroy(fireball, 1.5f);
     }
 }
