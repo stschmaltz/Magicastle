@@ -27,6 +27,6 @@ public class Fireball : MonoBehaviour
             fireballRigidbody.velocity = direction * fireballSpeed;
         }
 
-        Destroy(fireball, 1.5f);
+        Destroy(fireball, fireballLifetime);
     }
 }
