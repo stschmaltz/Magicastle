@@ -18,6 +18,7 @@ public class Health : MonoBehaviour
     [SerializeField] float maxHealth = 100;
     [SerializeField] float currentHealth;
     [SerializeField] bool isPlayer = false;
+    private bool isImmune = false;
 
     [Header("Health Bar")]
     [SerializeField] Slider healthBarSlider;
@@ -59,8 +60,23 @@ public class Health : MonoBehaviour
         {
             currentHealth = maxHealth;
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        DamageDealer damageDealer = other.GetComponent<DamageDealer>();
 
 
+        if (damageDealer != null)
+        {
+            damageDealer.Hit();
+
+            if (!isImmune)
+            {
+                TakeDamage(damageDealer.GetDamage());
+                StartCoroutine(TriggerImmunity(3));
+            }
+        }
     }
 
     void setHealthValue()
@@ -73,19 +89,6 @@ public class Health : MonoBehaviour
         }
     }
 
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        DamageDealer damageDealer = other.GetComponent<DamageDealer>();
-
-
-        if (damageDealer != null)
-        {
-            TakeDamage(damageDealer.GetDamage());
-            damageDealer.Hit();
-        }
-    }
-
     void setHealthText()
     {
         if (healthBarText != null)
@@ -94,6 +97,13 @@ public class Health : MonoBehaviour
 
             healthBarText.text = textCurrentHealth.ToString() + "/" + maxHealth.ToString();
         }
+    }
+
+    IEnumerator TriggerImmunity(float immunityDurationSeconds)
+    {
+        isImmune = true;
+        yield return new WaitForSeconds(immunityDurationSeconds);
+        isImmune = false;
     }
 
     void TakeDamage(float damage)
