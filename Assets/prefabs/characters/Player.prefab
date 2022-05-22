@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4662466321313994729}
+  - component: {fileID: 3927211786745835585}
   - component: {fileID: 4662466321313994727}
   - component: {fileID: 4662466321313994726}
   - component: {fileID: 3416996497628230687}
   - component: {fileID: 2027083731}
-  - component: {fileID: 6197059663958772293}
   - component: {fileID: 2027083738}
   m_Layer: 6
   m_Name: Player
@@ -38,6 +38,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3927211786745835585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4662466321313994728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec7f1729313e95241850615884e4b3d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 100
+  healthBarSlider: {fileID: 722000277852061886, guid: b5431266ae64114498d6a312fc00fb84,
+    type: 3}
+  healthBarUI: {fileID: 5454740051311874028, guid: ad4ff1b5c3dd9b84e994f212a7ac41b5,
+    type: 3}
+  healthBarText: {fileID: 0}
+  healthBarBehaviour: 0
 --- !u!114 &4662466321313994727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51,6 +71,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  model: {fileID: 0}
 --- !u!114 &4662466321313994726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,22 +140,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6197059663958772293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4662466321313994728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50e01369e16d73a4e8af5960c4ea1c67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 0
-  healthBarSlider: {fileID: 0}
-  healthBarUI: {fileID: 0}
 --- !u!58 &2027083738
 CircleCollider2D:
   m_ObjectHideFlags: 0

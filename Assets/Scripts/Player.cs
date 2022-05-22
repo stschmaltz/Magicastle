@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
 {
 
     [SerializeField] float moveSpeed = 5f;
+    [SerializeField] private GameObject model;
     Vector2 rawInput;
 
 
@@ -30,6 +31,11 @@ public class Player : MonoBehaviour
         rawInput = value.Get<Vector2>();
     }
 
+
+    public void ScaleModelTo(Vector3 scale)
+    {
+        model.transform.localScale = scale;
+    }
 
     void OnFire(InputValue value)
     {

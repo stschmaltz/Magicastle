@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6643757459839257109}
+  - component: {fileID: 8435609363253708795}
   - component: {fileID: 2967660539622407886}
-  - component: {fileID: -4506027931205000230}
   - component: {fileID: 2025651391}
   - component: {fileID: 2025651389}
   m_Layer: 7
@@ -42,6 +42,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &8435609363253708795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2967660539622407884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 772958a10921a04439211a99bf6ee46a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 100
+  healthBarSlider: {fileID: 5652588804392966700}
+  healthBarUI: {fileID: 5921219525196225462}
+  healthBarText: {fileID: 0}
+  healthBarBehaviour: 1
+  score: 100
 --- !u!50 &2967660539622407886
 Rigidbody2D:
   serializedVersion: 4
@@ -63,23 +82,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-4506027931205000230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2967660539622407884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50e01369e16d73a4e8af5960c4ea1c67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 100
-  healthBarSlider: {fileID: 5652588804392966700}
-  healthBarUI: {fileID: 5921219525196225462}
-  ShowHealthBarAfterDamage: 1
 --- !u!58 &2025651391
 CircleCollider2D:
   m_ObjectHideFlags: 0

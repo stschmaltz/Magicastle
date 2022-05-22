@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7837797141471875708}
-  - component: {fileID: 7837797141471878531}
+  - component: {fileID: 3568162695935147715}
   - component: {fileID: 7837797141471878530}
   - component: {fileID: 7837797141471875710}
   - component: {fileID: 7837797141471875709}
@@ -38,7 +38,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7837797141471878531
+--- !u!114 &3568162695935147715
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -47,12 +47,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7837797141471878529}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50e01369e16d73a4e8af5960c4ea1c67, type: 3}
+  m_Script: {fileID: 11500000, guid: 772958a10921a04439211a99bf6ee46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  currentHealth: 0
-  isPlayer: 0
+  currentHealth: 100
   healthBarSlider: {fileID: 831932477910275698}
   healthBarUI: {fileID: 1717556419494877160}
   healthBarText: {fileID: 0}
@@ -146,7 +145,7 @@ MonoBehaviour:
   projectileSpeed: 10
   projectileLifetime: 5
   firingRate: 1.01
-  player: {fileID: 0}
+  player: {fileID: 4662466321313994728, guid: 1e3a9ca1956b1b94f90921c7eeee4f8e, type: 3}
   isFiring: 1
 --- !u!1001 &7837797141001270368
 PrefabInstance:

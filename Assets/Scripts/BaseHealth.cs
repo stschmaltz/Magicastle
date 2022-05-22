@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.Rendering.UI;
 using UnityEngine.UI;
 
+
 public enum HealthBarBehaviour
 {
     AlwaysVisible,
@@ -13,12 +14,11 @@ public enum HealthBarBehaviour
 
 }
 
-public class Health : MonoBehaviour
+public class BaseHealth : MonoBehaviour
 {
     [SerializeField] float maxHealth = 100;
     [SerializeField] float currentHealth;
-    [SerializeField] bool isPlayer = false;
-    private bool isImmune = false;
+    protected bool isImmune = false;
 
     [Header("Health Bar")]
     [SerializeField] Slider healthBarSlider;
@@ -26,12 +26,7 @@ public class Health : MonoBehaviour
     [SerializeField] TextMeshProUGUI healthBarText;
     [SerializeField] HealthBarBehaviour healthBarBehaviour = HealthBarBehaviour.VisibleWhenDamaged;
 
-    [Header("Score")]
-    ScoreKeeper scoreKeeper;
-    [SerializeField] float score = 100;
-
-
-    void Start()
+    protected virtual void Start()
     {
         currentHealth = maxHealth;
 
@@ -44,12 +39,11 @@ public class Health : MonoBehaviour
         }
     }
 
-    void Awake()
+    protected virtual void Awake()
     {
-        scoreKeeper = FindObjectOfType<ScoreKeeper>();
     }
 
-    void Update()
+    protected virtual void Update()
     {
         if (healthBarUI != null && currentHealth < maxHealth)
         {
@@ -62,24 +56,18 @@ public class Health : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    protected virtual void OnTriggerEnter2D(Collider2D other)
     {
         DamageDealer damageDealer = other.GetComponent<DamageDealer>();
-
 
         if (damageDealer != null)
         {
             damageDealer.Hit();
-
-            if (!isImmune)
-            {
-                TakeDamage(damageDealer.GetDamage());
-                StartCoroutine(TriggerImmunity(3));
-            }
+            TakeDamage(damageDealer.GetDamage());
         }
     }
 
-    void setHealthValue()
+    private void setHealthValue()
     {
         if (healthBarSlider != null)
         {
@@ -89,7 +77,7 @@ public class Health : MonoBehaviour
         }
     }
 
-    void setHealthText()
+    private void setHealthText()
     {
         if (healthBarText != null)
         {
@@ -99,14 +87,8 @@ public class Health : MonoBehaviour
         }
     }
 
-    IEnumerator TriggerImmunity(float immunityDurationSeconds)
-    {
-        isImmune = true;
-        yield return new WaitForSeconds(immunityDurationSeconds);
-        isImmune = false;
-    }
 
-    void TakeDamage(float damage)
+    protected void TakeDamage(float damage)
     {
         currentHealth -= damage;
 
@@ -120,14 +102,8 @@ public class Health : MonoBehaviour
         setHealthText();
     }
 
-    void TriggerDeath()
+    protected virtual void TriggerDeath()
     {
-
-        if (!isPlayer)
-        {
-            scoreKeeper.ModifyScore(score);
-        }
-
         Destroy(gameObject);
     }
 }
