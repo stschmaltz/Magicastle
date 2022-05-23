@@ -52,12 +52,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 100
-  healthBarSlider: {fileID: 722000277852061886, guid: b5431266ae64114498d6a312fc00fb84,
-    type: 3}
-  healthBarUI: {fileID: 5454740051311874028, guid: ad4ff1b5c3dd9b84e994f212a7ac41b5,
-    type: 3}
+  healthBarSlider: {fileID: 0}
+  healthBarUI: {fileID: 0}
   healthBarText: {fileID: 0}
   healthBarBehaviour: 0
+  playerModel: {fileID: 4661732652693198746}
+  invincibilityDeltaTime: 0
+  invincibilityDurationSeconds: 0
 --- !u!114 &4662466321313994727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,7 +72,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  model: {fileID: 0}
+  playerModel: {fileID: 4661732652693198746}
 --- !u!114 &4662466321313994726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,7 +166,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1589123261345258, guid: bedfc2489e233ae479eff548012e1c92, type: 3}
       propertyPath: m_Name
-      value: mage_dark
+      value: PlayerModel
       objectReference: {fileID: 0}
     - target: {fileID: 1589123261345258, guid: bedfc2489e233ae479eff548012e1c92, type: 3}
       propertyPath: m_Layer
@@ -278,6 +279,12 @@ PrefabInstance:
 --- !u!4 &4658081556183123624 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4710395557788888, guid: bedfc2489e233ae479eff548012e1c92,
+    type: 3}
+  m_PrefabInstance: {fileID: 4662466320974035568}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4661732652693198746 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1589123261345258, guid: bedfc2489e233ae479eff548012e1c92,
     type: 3}
   m_PrefabInstance: {fileID: 4662466320974035568}
   m_PrefabAsset: {fileID: 0}
