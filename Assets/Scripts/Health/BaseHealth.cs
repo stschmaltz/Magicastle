@@ -18,7 +18,6 @@ public class BaseHealth : MonoBehaviour
 {
     [SerializeField] float maxHealth = 100;
     [SerializeField] float currentHealth;
-    protected bool isImmune = false;
 
     [Header("Health Bar")]
     [SerializeField] Slider healthBarSlider;

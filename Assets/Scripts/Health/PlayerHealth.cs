@@ -13,6 +13,10 @@ public class PlayerHealth : BaseHealth
     [SerializeField] private GameObject playerModel;
     [SerializeField] private float invincibilityDeltaTime;
     [SerializeField] private float invincibilityDurationSeconds;
+    [SerializeField] private float parryTimeSeconds;
+
+    protected bool isImmune = false;
+    protected bool isParrying = false;
 
 
     override protected void Start()
@@ -46,7 +50,7 @@ public class PlayerHealth : BaseHealth
         {
             damageDealer.Hit();
 
-            if (!isImmune)
+            if (!isImmune && !isParrying)
             {
                 TakeDamage(damageDealer.GetDamage());
                 StartCoroutine(TriggerImmunity(invincibilityDurationSeconds));
