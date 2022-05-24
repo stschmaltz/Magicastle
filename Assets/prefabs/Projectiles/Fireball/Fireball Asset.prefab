@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2332776}
   - component: {fileID: 9617906}
   - component: {fileID: 8206854}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Fireball Asset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ TrailRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 522343235
-  m_SortingLayer: 4
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Time: 0.25
   m_Parameters:

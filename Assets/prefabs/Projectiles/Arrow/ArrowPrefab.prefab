@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5526863726204083899}
   - component: {fileID: 5526863726204083900}
-  m_Layer: 7
+  m_Layer: 15
   m_Name: ArrowSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -105541197
-  m_SortingLayer: 3
+  m_SortingLayerID: -790355531
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 934f5faf34b0d2944b11424ea4797a71, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 7088091823596629555}
   - component: {fileID: 8457765846588560380}
   - component: {fileID: 7072940316550363582}
-  m_Layer: 7
+  m_Layer: 15
   m_Name: ArrowPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
