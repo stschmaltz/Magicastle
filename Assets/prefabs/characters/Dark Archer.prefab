@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7837797141471875708}
+  - component: {fileID: 7837797141471875711}
   - component: {fileID: 3568162695935147715}
   - component: {fileID: 7837797141471878530}
   - component: {fileID: 7837797141471875710}
   - component: {fileID: 7837797141471875709}
-  - component: {fileID: 7837797141471875711}
   m_Layer: 7
   m_Name: Dark Archer
   m_TagString: Untagged
@@ -38,6 +38,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7837797141471875711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7837797141471878529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60c841b58cae0684285a83ab06d00fdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 5526863727210385245, guid: 162813e670b8687439e094f5f885c86d,
+    type: 3}
+  projectileSpeed: 10
+  projectileLifetime: 5
+  firingRate: 1.01
+  player: {fileID: 4662466321313994728, guid: 1e3a9ca1956b1b94f90921c7eeee4f8e, type: 3}
+  isFiring: 1
 --- !u!114 &3568162695935147715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,25 +147,6 @@ PolygonCollider2D:
       - {x: -0.21452767, y: -0.3991656}
       - {x: 0.16329646, y: -0.34061497}
       - {x: 0.11671573, y: -0.0056903064}
---- !u!114 &7837797141471875711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7837797141471878529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60c841b58cae0684285a83ab06d00fdb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectile: {fileID: 5526863727210385245, guid: 162813e670b8687439e094f5f885c86d,
-    type: 3}
-  projectileSpeed: 10
-  projectileLifetime: 5
-  firingRate: 1.01
-  player: {fileID: 4662466321313994728, guid: 1e3a9ca1956b1b94f90921c7eeee4f8e, type: 3}
-  isFiring: 1
 --- !u!1001 &7837797141001270368
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -381,7 +381,7 @@ PrefabInstance:
     - target: {fileID: 212837696014772894, guid: 996ab86bd80974c40a8d583e74a50bf0,
         type: 3}
       propertyPath: m_SortingLayer
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 212837696014772894, guid: 996ab86bd80974c40a8d583e74a50bf0,
         type: 3}

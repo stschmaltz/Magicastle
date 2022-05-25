@@ -13,11 +13,8 @@ public class PlayerHealth : BaseHealth
     [SerializeField] private GameObject playerModel;
     [SerializeField] private float invincibilityDeltaTime;
     [SerializeField] private float invincibilityDurationSeconds;
-    [SerializeField] private float parryTimeSeconds;
 
     protected bool isImmune = false;
-    protected bool isParrying = false;
-
 
     override protected void Start()
     {
@@ -43,6 +40,8 @@ public class PlayerHealth : BaseHealth
 
     override protected void OnTriggerEnter2D(Collider2D other)
     {
+        bool isParrying = false;
+
         DamageDealer damageDealer = other.GetComponent<DamageDealer>();
 
 
