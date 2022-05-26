@@ -13,9 +13,9 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private GameObject playerModel;
     private Vector2 rawInput;
 
-    [SerializeField] private float parryTimeSeconds = 0.5f;
+    [SerializeField] private float parryCoolDownSeconds = 1.5f;
+    [SerializeField] private float parryTimeSeconds = 0.3f;
     [HideInInspector] public bool isParrying = false;
-
 
     Fireball fireball;
 
@@ -27,6 +27,7 @@ public class PlayerControl : MonoBehaviour
 
     void Update()
     {
+
         handleMovementInput();
     }
 
@@ -47,15 +48,13 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-
     private void handleMovementInput()
     {
         float horizontalMovement = rawInput.x;
         float verticalMovement = rawInput.y;
 
         Vector2 direction = new Vector2(horizontalMovement, verticalMovement);
-        Debug.Log(rawInput);
-        Debug.Log(direction);
+
         // Diagonal movement
         if (horizontalMovement != 0f && verticalMovement != 0f)
         {
@@ -66,6 +65,10 @@ public class PlayerControl : MonoBehaviour
         if (isMovement)
         {
             player.movementEvent.CallMovementEvent(direction, moveSpeed);
+        }
+        else
+        {
+            player.idleEvent.CallIdleEvent();
         }
     }
 }

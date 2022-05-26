@@ -18,7 +18,9 @@ GameObject:
   - component: {fileID: -2043082604852323996}
   - component: {fileID: 7278639971332364234}
   - component: {fileID: -7425936040901511619}
-  m_Layer: 6
+  - component: {fileID: -1425352039610094838}
+  - component: {fileID: -6182280630631400460}
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -60,8 +62,8 @@ MonoBehaviour:
   healthBarText: {fileID: 0}
   healthBarBehaviour: 0
   playerModel: {fileID: 4661732652693198746}
-  invincibilityDeltaTime: 0
-  invincibilityDurationSeconds: 0
+  invincibilityDeltaTime: 0.15
+  invincibilityDurationSeconds: 1.5
 --- !u!114 &4662466321313994726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,6 +180,8 @@ MonoBehaviour:
   playerControl: {fileID: 0}
   movementEvent: {fileID: 0}
   movementHandler: {fileID: 0}
+  idleEvent: {fileID: 0}
+  idleHandler: {fileID: 0}
 --- !u!114 &7278639971332364234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,6 +206,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b91dfc91614f34286427439445430f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-1425352039610094838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4662466321313994728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96162d85121eea347b16b2c9f7d94006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-6182280630631400460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4662466321313994728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4e1f4ddadc03054287cc5c2627f5bf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4662466320974035568
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -215,7 +243,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1589123261345258, guid: bedfc2489e233ae479eff548012e1c92, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4710395557788888, guid: bedfc2489e233ae479eff548012e1c92, type: 3}
       propertyPath: m_RootOrder

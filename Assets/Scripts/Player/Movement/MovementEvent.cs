@@ -6,7 +6,6 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public class MovementEvent : MonoBehaviour
 {
-
     public event Action<MovementEvent, MovementEventArgs> OnMovement;
 
     public void CallMovementEvent(Vector2 moveDirection, float moveSpeed)
