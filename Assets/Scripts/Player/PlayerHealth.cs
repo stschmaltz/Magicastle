@@ -15,6 +15,7 @@ public class PlayerHealth : BaseHealth
     [SerializeField] private float invincibilityDurationSeconds;
 
     protected bool isImmune = false;
+    private Player player;
 
     override protected void Start()
     {
@@ -24,6 +25,8 @@ public class PlayerHealth : BaseHealth
     override protected void Awake()
     {
         base.Awake();
+        player = GetComponent<Player>();
+
     }
 
     override protected void Update()
@@ -40,7 +43,7 @@ public class PlayerHealth : BaseHealth
 
     override protected void OnTriggerEnter2D(Collider2D other)
     {
-        bool isParrying = false;
+        bool isParrying = player.playerControl.isParrying;
 
         DamageDealer damageDealer = other.GetComponent<DamageDealer>();
 
@@ -63,34 +66,23 @@ public class PlayerHealth : BaseHealth
         base.TriggerDeath();
     }
 
-    private void ScaleModelTo(Vector3 scale)
-    {
-        playerModel.transform.localScale = scale;
-    }
-
-    private Vector3 getScale()
-    {
-        return playerModel.transform.localScale;
-    }
-
-
     private IEnumerator Flash()
     {
 
-        Vector3 initialScale = getScale();
+        Vector3 initialScale = player.playerControl.GetScale();
         for (float i = 0; i < invincibilityDurationSeconds; i += invincibilityDeltaTime)
         {
-            if (getScale() == initialScale)
+            if (player.playerControl.GetScale() == initialScale)
             {
-                ScaleModelTo(Vector3.zero);
+                player.playerControl.ScaleModelTo(Vector3.zero);
             }
             else
             {
-                ScaleModelTo(initialScale);
+                player.playerControl.ScaleModelTo(initialScale);
             }
             yield return new WaitForSeconds(invincibilityDeltaTime);
         }
 
-        ScaleModelTo(initialScale);
+        player.playerControl.ScaleModelTo(initialScale);
     }
 }

@@ -11,11 +11,13 @@ public class PlayerControl : MonoBehaviour
     private Player player;
     [SerializeField] float moveSpeed = 5f;
     [SerializeField] private GameObject playerModel;
-    private Vector2 rawInput;
+    private Vector2 moveInput;
 
+    Coroutine parryCoroutine;
     [SerializeField] private float parryCoolDownSeconds = 1.5f;
     [SerializeField] private float parryTimeSeconds = 0.3f;
     [HideInInspector] public bool isParrying = false;
+    [HideInInspector] public bool isParryOnCD = false;
 
     Fireball fireball;
 
@@ -27,18 +29,54 @@ public class PlayerControl : MonoBehaviour
 
     void Update()
     {
-
+        Debug.Log(isParryOnCD);
+        Debug.Log(isParrying);
         handleMovementInput();
     }
 
     void OnMove(InputValue value)
     {
-        Debug.Log("OnMove");
-        rawInput = value.Get<Vector2>();
+        // TODO: is this the best way to do this?
+        moveInput = value.Get<Vector2>();
+    }
+
+    void OnParry()
+    {
+        if (parryCoroutine == null)
+        {
+            parryCoroutine = StartCoroutine(Parry());
+        }
+    }
+
+    IEnumerator Parry()
+    {
+        Vector3 initialScale = GetScale();
+        Debug.Log("Parrying");
+        isParrying = true;
+        ScaleModelTo(new Vector3(2f, 2f, 0f));
+        yield return new WaitForSeconds(parryTimeSeconds);
+
+        ScaleModelTo(initialScale);
+        isParrying = false;
+        isParryOnCD = true;
+
+        yield return new WaitForSeconds(parryCoolDownSeconds);
+        isParryOnCD = false;
+
+        parryCoroutine = null;
     }
 
 
-    public void ScaleModelTo(Vector3 scale) { playerModel.transform.localScale = scale; }
+    public void ScaleModelTo(Vector3 scale)
+    {
+        playerModel.transform.localScale = scale;
+    }
+
+    public Vector3 GetScale()
+    {
+        return playerModel.transform.localScale;
+    }
+
 
     void OnFire(InputValue value)
     {
@@ -50,8 +88,9 @@ public class PlayerControl : MonoBehaviour
 
     private void handleMovementInput()
     {
-        float horizontalMovement = rawInput.x;
-        float verticalMovement = rawInput.y;
+
+        float horizontalMovement = moveInput.x;
+        float verticalMovement = moveInput.y;
 
         Vector2 direction = new Vector2(horizontalMovement, verticalMovement);
 

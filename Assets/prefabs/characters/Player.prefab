@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4662466321313994729}
+  - component: {fileID: 4662466321313994727}
   - component: {fileID: 3927211786745835585}
   - component: {fileID: 4662466321313994726}
   - component: {fileID: 3416996497628230687}
   - component: {fileID: 2027083731}
   - component: {fileID: 2027083738}
-  - component: {fileID: 4662466321313994727}
   - component: {fileID: -2043082604852323996}
   - component: {fileID: 7278639971332364234}
   - component: {fileID: -7425936040901511619}
@@ -43,6 +43,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4662466321313994727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4662466321313994728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b09ac637f110ad4db4de27d4ecc1479, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  playerModel: {fileID: 4661732652693198746}
+  parryCoolDownSeconds: 1.5
+  parryTimeSeconds: 0.5
+  isParrying: 0
+  isParryOnCD: 0
 --- !u!114 &3927211786745835585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,22 +166,6 @@ CircleCollider2D:
   m_Offset: {x: 0.14013845, y: -0.17216992}
   serializedVersion: 2
   m_Radius: 0.46796846
---- !u!114 &4662466321313994727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4662466321313994728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b09ac637f110ad4db4de27d4ecc1479, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  playerModel: {fileID: 4661732652693198746}
-  parryTimeSeconds: 0.5
-  isParrying: 0
 --- !u!114 &-2043082604852323996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,6 +315,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 212167722387132558, guid: bedfc2489e233ae479eff548012e1c92,
         type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212167722387132558, guid: bedfc2489e233ae479eff548012e1c92,
+        type: 3}
       propertyPath: m_Size.x
       value: 1.28
       objectReference: {fileID: 0}
@@ -325,12 +332,37 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: df658a412de80df46add0126676455d4,
+      objectReference: {fileID: 21300000, guid: b7987ebfc0df5aa4ab00f2d99124b4cf,
         type: 3}
+    - target: {fileID: 212167722387132558, guid: bedfc2489e233ae479eff548012e1c92,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212167722387132558, guid: bedfc2489e233ae479eff548012e1c92,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212167722387132558, guid: bedfc2489e233ae479eff548012e1c92,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212167722387132558, guid: bedfc2489e233ae479eff548012e1c92,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 212167722387132558, guid: bedfc2489e233ae479eff548012e1c92,
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212167722387132558, guid: bedfc2489e233ae479eff548012e1c92,
+        type: 3}
+      propertyPath: m_DrawMode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 212167722387132558, guid: bedfc2489e233ae479eff548012e1c92,
         type: 3}
@@ -346,6 +378,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingLayerID
       value: -653709415
+      objectReference: {fileID: 0}
+    - target: {fileID: 212167722387132558, guid: bedfc2489e233ae479eff548012e1c92,
+        type: 3}
+      propertyPath: m_MaskInteraction
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212167722387132558, guid: bedfc2489e233ae479eff548012e1c92,
+        type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bedfc2489e233ae479eff548012e1c92, type: 3}

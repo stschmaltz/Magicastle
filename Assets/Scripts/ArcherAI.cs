@@ -44,10 +44,8 @@ public class ArcherAI : MonoBehaviour
 
     Quaternion GetRotationTowardsPlayer()
     {
-        if (player == null)
-        {
-            return Quaternion.Euler(new Vector3(0, 0, 0));
-        }
+
+
         float angle = Mathf.Atan2(player.transform.position.y - transform.position.y, player.transform.position.x - transform.position.x) * Mathf.Rad2Deg;
         return Quaternion.Euler(new Vector3(0, 0, angle - 180));
     }
@@ -57,6 +55,12 @@ public class ArcherAI : MonoBehaviour
     {
         while (true)
         {
+            if (player == null)
+            {
+                isFiring = false;
+                yield break;
+            }
+
             Quaternion targetRotation = GetRotationTowardsPlayer();
 
             GameObject newProjectile = Instantiate(projectile, transform.position, targetRotation);
