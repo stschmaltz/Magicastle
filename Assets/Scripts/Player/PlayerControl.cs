@@ -11,6 +11,7 @@ public class PlayerControl : MonoBehaviour
     private Player player;
     [SerializeField] float moveSpeed = 5f;
     [SerializeField] private GameObject playerModel;
+    [SerializeField] private ParryFlashEffectSO flashEffect;
     private Vector2 moveInput;
 
     Coroutine parryCoroutine;
@@ -53,10 +54,9 @@ public class PlayerControl : MonoBehaviour
         Vector3 initialScale = GetScale();
         Debug.Log("Parrying");
         isParrying = true;
-        ScaleModelTo(new Vector3(2f, 2f, 0f));
+        ParryFlashEffect();
         yield return new WaitForSeconds(parryTimeSeconds);
 
-        ScaleModelTo(initialScale);
         isParrying = false;
         isParryOnCD = true;
 
@@ -66,6 +66,19 @@ public class PlayerControl : MonoBehaviour
         parryCoroutine = null;
     }
 
+    private void ParryFlashEffect()
+    {
+        // Process if there is a shoot effect & prefab
+        if (flashEffect != null && flashEffect.flashEffectPrefab != null)
+        {
+            // Instantiate the flash effect
+            ParryFlashEffect parryFlashEffect = Instantiate(flashEffect.flashEffectPrefab, transform.position, Quaternion.identity).GetComponent<ParryFlashEffect>();
+            // Set shoot effect
+            parryFlashEffect.SetShootEffect(flashEffect);
+
+            parryFlashEffect.gameObject.SetActive(true);
+        }
+    }
 
     public void ScaleModelTo(Vector3 scale)
     {
