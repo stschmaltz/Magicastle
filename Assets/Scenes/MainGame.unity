@@ -164,29 +164,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 734747774}
     m_Modifications:
-    - target: {fileID: 2027083738, guid: 1e3a9ca1956b1b94f90921c7eeee4f8e, type: 3}
-      propertyPath: m_Radius
-      value: 0.54530936
-      objectReference: {fileID: 0}
-    - target: {fileID: 2027083738, guid: 1e3a9ca1956b1b94f90921c7eeee4f8e, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.09482902
-      objectReference: {fileID: 0}
-    - target: {fileID: 3927211786745835585, guid: 1e3a9ca1956b1b94f90921c7eeee4f8e,
-        type: 3}
-      propertyPath: maxHealth
-      value: 1000
-      objectReference: {fileID: 0}
     - target: {fileID: 3927211786745835585, guid: 1e3a9ca1956b1b94f90921c7eeee4f8e,
         type: 3}
       propertyPath: healthBarUI
       value: 
       objectReference: {fileID: 706294376}
-    - target: {fileID: 3927211786745835585, guid: 1e3a9ca1956b1b94f90921c7eeee4f8e,
-        type: 3}
-      propertyPath: currentHealth
-      value: 1000
-      objectReference: {fileID: 0}
     - target: {fileID: 3927211786745835585, guid: 1e3a9ca1956b1b94f90921c7eeee4f8e,
         type: 3}
       propertyPath: healthBarText
@@ -197,16 +179,6 @@ PrefabInstance:
       propertyPath: healthBarSlider
       value: 
       objectReference: {fileID: 6939963717286314194}
-    - target: {fileID: 4658081556183123624, guid: 1e3a9ca1956b1b94f90921c7eeee4f8e,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.13
-      objectReference: {fileID: 0}
-    - target: {fileID: 4658081556183123624, guid: 1e3a9ca1956b1b94f90921c7eeee4f8e,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.25
-      objectReference: {fileID: 0}
     - target: {fileID: 4662466321313994726, guid: 1e3a9ca1956b1b94f90921c7eeee4f8e,
         type: 3}
       propertyPath: m_Camera
@@ -217,12 +189,6 @@ PrefabInstance:
       propertyPath: m_UIInputModule
       value: 
       objectReference: {fileID: 883132890}
-    - target: {fileID: 4662466321313994727, guid: 1e3a9ca1956b1b94f90921c7eeee4f8e,
-        type: 3}
-      propertyPath: flashEffect
-      value: 
-      objectReference: {fileID: 11400000, guid: 4251b9b7a748b864884ea60f2867d852,
-        type: 2}
     - target: {fileID: 4662466321313994728, guid: 1e3a9ca1956b1b94f90921c7eeee4f8e,
         type: 3}
       propertyPath: m_Name
@@ -283,12 +249,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4775413203382397694, guid: 1e3a9ca1956b1b94f90921c7eeee4f8e,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: df658a412de80df46add0126676455d4,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e3a9ca1956b1b94f90921c7eeee4f8e, type: 3}
 --- !u!4 &26090749 stripped
