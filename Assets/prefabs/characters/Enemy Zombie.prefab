@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2967660539622407886}
   - component: {fileID: 2025651391}
   - component: {fileID: 2025651389}
-  m_Layer: 7
+  m_Layer: 15
   m_Name: Enemy Zombie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1044937863551718, guid: c78964a868130e046832ee43d8b97d86, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4919699351270174, guid: c78964a868130e046832ee43d8b97d86, type: 3}
       propertyPath: m_RootOrder
@@ -178,12 +178,12 @@ PrefabInstance:
     - target: {fileID: 212973890491868762, guid: c78964a868130e046832ee43d8b97d86,
         type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 212973890491868762, guid: c78964a868130e046832ee43d8b97d86,
         type: 3}
       propertyPath: m_SortingLayerID
-      value: -105541197
+      value: -653709415
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c78964a868130e046832ee43d8b97d86, type: 3}
@@ -305,6 +305,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2197244230454786871, guid: c61d24529add23f48a3894bafc5ff67c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2688149477122624183, guid: c61d24529add23f48a3894bafc5ff67c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 5287247761614376270, guid: c61d24529add23f48a3894bafc5ff67c,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -315,10 +325,35 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6109372104490933897, guid: c61d24529add23f48a3894bafc5ff67c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7673538873349755744, guid: c61d24529add23f48a3894bafc5ff67c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7726523391887938471, guid: c61d24529add23f48a3894bafc5ff67c,
         type: 3}
       propertyPath: m_Name
       value: HealthBarUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 7726523391887938471, guid: c61d24529add23f48a3894bafc5ff67c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7760545825848956540, guid: c61d24529add23f48a3894bafc5ff67c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8867744413327877000, guid: c61d24529add23f48a3894bafc5ff67c,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -653709415
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61d24529add23f48a3894bafc5ff67c, type: 3}

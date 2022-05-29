@@ -5,20 +5,16 @@ using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Player))]
 [DisallowMultipleComponent]
-
 public class PlayerControl : MonoBehaviour
 {
-    private Player player;
-    [SerializeField] float moveSpeed = 5f;
-    [SerializeField] private GameObject playerModel;
-    [SerializeField] private ParryFlashEffectSO flashEffect;
-    private Vector2 moveInput;
 
-    Coroutine parryCoroutine;
-    [SerializeField] private float parryCoolDownSeconds = 1.5f;
-    [SerializeField] private float parryTimeSeconds = 0.3f;
+    [SerializeField] private GameObject playerModel;
+    [SerializeField] float moveSpeed = 5f;
+
+    private Player player;
+    private Vector2 moveInput;
     [HideInInspector] public bool isParrying = false;
-    [HideInInspector] public bool isParryOnCD = false;
+
 
     Fireball fireball;
 
@@ -30,8 +26,6 @@ public class PlayerControl : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(isParryOnCD);
-        Debug.Log(isParrying);
         handleMovementInput();
     }
 
@@ -43,51 +37,23 @@ public class PlayerControl : MonoBehaviour
 
     void OnParry()
     {
-        if (parryCoroutine == null)
-        {
-            parryCoroutine = StartCoroutine(Parry());
-        }
+        player.parryEvent.CallParryEvent();
     }
 
-    IEnumerator Parry()
+    public Vector3 GetPlayerPosition()
     {
-        Vector3 initialScale = GetScale();
-        Debug.Log("Parrying");
-        isParrying = true;
-        ParryFlashEffect();
-        yield return new WaitForSeconds(parryTimeSeconds);
-
-        isParrying = false;
-        isParryOnCD = true;
-
-        yield return new WaitForSeconds(parryCoolDownSeconds);
-        isParryOnCD = false;
-
-        parryCoroutine = null;
-    }
-
-    private void ParryFlashEffect()
-    {
-        // Process if there is a shoot effect & prefab
-        if (flashEffect != null && flashEffect.flashEffectPrefab != null)
-        {
-            // Instantiate the flash effect
-            ParryFlashEffect parryFlashEffect = Instantiate(flashEffect.flashEffectPrefab, transform.position, Quaternion.identity).GetComponent<ParryFlashEffect>();
-            // Set shoot effect
-            parryFlashEffect.SetShootEffect(flashEffect);
-
-            parryFlashEffect.gameObject.SetActive(true);
-        }
-    }
-
-    public void ScaleModelTo(Vector3 scale)
-    {
-        playerModel.transform.localScale = scale;
+        return transform.position;
     }
 
     public Vector3 GetScale()
     {
         return playerModel.transform.localScale;
+    }
+
+
+    public void ScaleModelTo(Vector3 scale)
+    {
+        playerModel.transform.localScale = scale;
     }
 
 

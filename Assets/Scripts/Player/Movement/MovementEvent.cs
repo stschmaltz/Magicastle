@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[DisallowMultipleComponent]
 public class MovementEvent : MonoBehaviour
 {
     public event Action<MovementEvent, MovementEventArgs> OnMovement;

@@ -7,10 +7,9 @@ using UnityEngine.Rendering.UI;
 using UnityEngine.UI;
 
 
-
+[DisallowMultipleComponent]
 public class PlayerHealth : BaseHealth
 {
-    [SerializeField] private GameObject playerModel;
     [SerializeField] private float invincibilityDeltaTime;
     [SerializeField] private float invincibilityDurationSeconds;
 

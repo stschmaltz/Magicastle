@@ -7,6 +7,10 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerHealth))]
 [RequireComponent(typeof(MovementEvent))]
 [RequireComponent(typeof(MovementHandler))]
+[RequireComponent(typeof(IdleEvent))]
+[RequireComponent(typeof(IdleHandler))]
+[RequireComponent(typeof(ParryEvent))]
+[RequireComponent(typeof(ParryHandler))]
 [DisallowMultipleComponent]
 public class Player : MonoBehaviour
 {
@@ -16,6 +20,8 @@ public class Player : MonoBehaviour
     [HideInInspector] public MovementHandler movementHandler;
     [HideInInspector] public IdleEvent idleEvent;
     [HideInInspector] public IdleHandler idleHandler;
+    [HideInInspector] public ParryEvent parryEvent;
+    [HideInInspector] public ParryHandler parryHandler;
 
     void Awake()
     {
@@ -25,10 +31,9 @@ public class Player : MonoBehaviour
         movementHandler = GetComponent<MovementHandler>();
         idleEvent = GetComponent<IdleEvent>();
         idleHandler = GetComponent<IdleHandler>();
+        parryEvent = GetComponent<ParryEvent>();
+        parryHandler = GetComponent<ParryHandler>();
     }
 
-    public Vector3 GetPlayerPosition()
-    {
-        return transform.position;
-    }
+
 }

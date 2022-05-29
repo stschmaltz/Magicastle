@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
+[DisallowMultipleComponent]
 public class IdleHandler : MonoBehaviour
 {
     private Rigidbody2D rigidBody2D;

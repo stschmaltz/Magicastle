@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4662466321313994727}
   - component: {fileID: 3927211786745835585}
   - component: {fileID: 4662466321313994726}
+  - component: {fileID: 166153544}
   - component: {fileID: 3416996497628230687}
   - component: {fileID: 2027083731}
   - component: {fileID: 2027083738}
@@ -20,6 +21,7 @@ GameObject:
   - component: {fileID: -7425936040901511619}
   - component: {fileID: -1425352039610094838}
   - component: {fileID: -6182280630631400460}
+  - component: {fileID: 166153545}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -55,13 +57,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b09ac637f110ad4db4de27d4ecc1479, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
   playerModel: {fileID: 4661732652693198746}
-  flashEffect: {fileID: 11400000, guid: 4251b9b7a748b864884ea60f2867d852, type: 2}
-  parryCoolDownSeconds: 1.5
-  parryTimeSeconds: 0.5
+  moveSpeed: 5
   isParrying: 0
-  isParryOnCD: 0
 --- !u!114 &3927211786745835585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,7 +78,6 @@ MonoBehaviour:
   healthBarUI: {fileID: 0}
   healthBarText: {fileID: 0}
   healthBarBehaviour: 0
-  playerModel: {fileID: 4661732652693198746}
   invincibilityDeltaTime: 0.15
   invincibilityDurationSeconds: 1.5
 --- !u!114 &4662466321313994726
@@ -114,6 +111,22 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &166153544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4662466321313994728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 631a1999155dc28468d6fd755b6e51e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashEffect: {fileID: 11400000, guid: 4251b9b7a748b864884ea60f2867d852, type: 2}
+  parryCoolDownSeconds: 1.5
+  parryTimeSeconds: 0.3
+  isParryOnCD: 0
 --- !u!114 &3416996497628230687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,6 +198,8 @@ MonoBehaviour:
   movementHandler: {fileID: 0}
   idleEvent: {fileID: 0}
   idleHandler: {fileID: 0}
+  parryEvent: {fileID: 0}
+  parryHandler: {fileID: 0}
 --- !u!114 &7278639971332364234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,6 +246,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4e1f4ddadc03054287cc5c2627f5bf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &166153545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4662466321313994728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80641b0f689019347a6835c653ea5436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &4662466320974035568
