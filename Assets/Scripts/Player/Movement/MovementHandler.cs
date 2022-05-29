@@ -7,11 +7,13 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public class MovementHandler : MonoBehaviour
 {
+    private Player player;
     private Rigidbody2D rigidBody2D;
     private MovementEvent movementEvent;
 
     private void Awake()
     {
+        player = GetComponent<Player>();
         rigidBody2D = GetComponent<Rigidbody2D>();
         movementEvent = GetComponent<MovementEvent>();
     }
@@ -29,6 +31,10 @@ public class MovementHandler : MonoBehaviour
     private void MovementEvent_HandleOnMovement(MovementEvent movementEvent, MovementEventArgs args)
     {
         MoveRigidBody(args.moveDirection, args.moveSpeed);
+
+        // TODO: create AnimatePlayer script
+        player.animator.SetBool(Animator.StringToHash("idle"), false);
+        player.animator.SetBool(Animator.StringToHash("run"), true);
     }
 
     private void MoveRigidBody(Vector2 moveDirection, float moveSpeed)

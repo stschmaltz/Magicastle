@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     [HideInInspector] public IdleHandler idleHandler;
     [HideInInspector] public ParryEvent parryEvent;
     [HideInInspector] public ParryHandler parryHandler;
+    [HideInInspector] public Animator animator;
 
     void Awake()
     {
@@ -35,5 +36,7 @@ public class Player : MonoBehaviour
         idleHandler = GetComponent<IdleHandler>();
         parryEvent = GetComponent<ParryEvent>();
         parryHandler = GetComponent<ParryHandler>();
+
+        animator = GetComponentInChildren<Animator>();
     }
 }
