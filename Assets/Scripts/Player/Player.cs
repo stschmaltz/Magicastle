@@ -15,6 +15,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [HideInInspector] public PlayerHealth playerHealth;
+    [HideInInspector] public PlayerStatus playerStatus;
     [HideInInspector] public PlayerControl playerControl;
     [HideInInspector] public MovementEvent movementEvent;
     [HideInInspector] public MovementHandler movementHandler;
@@ -26,6 +27,7 @@ public class Player : MonoBehaviour
     void Awake()
     {
         playerHealth = GetComponent<PlayerHealth>();
+        playerStatus = GetComponent<PlayerStatus>();
         playerControl = GetComponent<PlayerControl>();
         movementEvent = GetComponent<MovementEvent>();
         movementHandler = GetComponent<MovementHandler>();
@@ -34,6 +36,4 @@ public class Player : MonoBehaviour
         parryEvent = GetComponent<ParryEvent>();
         parryHandler = GetComponent<ParryHandler>();
     }
-
-
 }

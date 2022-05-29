@@ -13,8 +13,6 @@ public class PlayerControl : MonoBehaviour
 
     private Player player;
     private Vector2 moveInput;
-    [HideInInspector] public bool isParrying = false;
-
 
     Fireball fireball;
 

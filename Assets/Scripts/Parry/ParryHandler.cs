@@ -8,8 +8,8 @@ public class ParryHandler : MonoBehaviour
     private Player player;
     private ParryEvent parryEvent;
     private Coroutine parryCoroutine;
-    [SerializeField] private ParryFlashEffectSO flashEffect;
 
+    [SerializeField] private ParryFlashEffectSO flashEffect;
     [SerializeField] private float parryCoolDownSeconds = 1.5f;
     [SerializeField] private float parryTimeSeconds = 0.3f;
     [HideInInspector] public bool isParryOnCD = false;
@@ -56,10 +56,10 @@ public class ParryHandler : MonoBehaviour
     {
         Vector3 initialScale = player.playerControl.GetScale();
 
-        player.playerControl.isParrying = true;
+        player.playerStatus.isParrying = true;
         ParryFlashEffect();
         yield return new WaitForSeconds(parryTimeSeconds);
-        player.playerControl.isParrying = false;
+        player.playerStatus.isParrying = false;
 
         isParryOnCD = true;
         yield return new WaitForSeconds(parryCoolDownSeconds);

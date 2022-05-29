@@ -13,7 +13,6 @@ public class PlayerHealth : BaseHealth
     [SerializeField] private float invincibilityDeltaTime;
     [SerializeField] private float invincibilityDurationSeconds;
 
-    protected bool isImmune = false;
     private Player player;
 
     override protected void Start()
@@ -35,14 +34,15 @@ public class PlayerHealth : BaseHealth
 
     private IEnumerator TriggerImmunity(float immunityDurationSeconds)
     {
-        isImmune = true;
+        player.playerStatus.isImmune = true;
         yield return new WaitForSeconds(immunityDurationSeconds);
-        isImmune = false;
+        player.playerStatus.isImmune = false;
     }
 
     override protected void OnTriggerEnter2D(Collider2D other)
     {
-        bool isParrying = player.playerControl.isParrying;
+        bool isParrying = player.playerStatus.isParrying;
+        bool isImmune = player.playerStatus.isImmune;
 
         DamageDealer damageDealer = other.GetComponent<DamageDealer>();
 
