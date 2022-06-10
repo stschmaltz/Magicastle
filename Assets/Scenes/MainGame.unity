@@ -7757,6 +7757,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 370222301936964578, guid: b5638c0dc78008f4abb58d5a1035a363,
         type: 3}
+      propertyPath: m_Value
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 370222301936964578, guid: b5638c0dc78008f4abb58d5a1035a363,
+        type: 3}
       propertyPath: m_Transition
       value: 0
       objectReference: {fileID: 0}
@@ -7955,7 +7960,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 1
-  m_Value: 60
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

@@ -31,10 +31,6 @@ public class MovementHandler : MonoBehaviour
     private void MovementEvent_HandleOnMovement(MovementEvent movementEvent, MovementEventArgs args)
     {
         MoveRigidBody(args.moveDirection, args.moveSpeed);
-
-        // TODO: create AnimatePlayer script
-        player.animator.SetBool(Animator.StringToHash("idle"), false);
-        player.animator.SetBool(Animator.StringToHash("run"), true);
     }
 
     private void MoveRigidBody(Vector2 moveDirection, float moveSpeed)

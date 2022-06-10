@@ -11,6 +11,8 @@ using UnityEngine;
 [RequireComponent(typeof(IdleHandler))]
 [RequireComponent(typeof(ParryEvent))]
 [RequireComponent(typeof(ParryHandler))]
+[RequireComponent(typeof(OnFireHandler))]
+[RequireComponent(typeof(OnFireEvent))]
 [DisallowMultipleComponent]
 public class Player : MonoBehaviour
 {
@@ -23,6 +25,8 @@ public class Player : MonoBehaviour
     [HideInInspector] public IdleHandler idleHandler;
     [HideInInspector] public ParryEvent parryEvent;
     [HideInInspector] public ParryHandler parryHandler;
+    [HideInInspector] public OnFireHandler onFireHandler;
+    [HideInInspector] public OnFireEvent onFireEvent;
     [HideInInspector] public Animator animator;
 
     void Awake()
@@ -30,12 +34,14 @@ public class Player : MonoBehaviour
         playerHealth = GetComponent<PlayerHealth>();
         playerStatus = GetComponent<PlayerStatus>();
         playerControl = GetComponent<PlayerControl>();
-        movementEvent = GetComponent<MovementEvent>();
-        movementHandler = GetComponent<MovementHandler>();
-        idleEvent = GetComponent<IdleEvent>();
         idleHandler = GetComponent<IdleHandler>();
-        parryEvent = GetComponent<ParryEvent>();
+        movementHandler = GetComponent<MovementHandler>();
+        onFireHandler = GetComponent<OnFireHandler>();
         parryHandler = GetComponent<ParryHandler>();
+        idleEvent = GetComponent<IdleEvent>();
+        movementEvent = GetComponent<MovementEvent>();
+        onFireEvent = GetComponent<OnFireEvent>();
+        parryEvent = GetComponent<ParryEvent>();
 
         animator = GetComponentInChildren<Animator>();
     }

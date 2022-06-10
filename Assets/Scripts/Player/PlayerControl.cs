@@ -14,12 +14,10 @@ public class PlayerControl : MonoBehaviour
     private Player player;
     private Vector2 moveInput;
 
-    Fireball fireball;
 
     void Awake()
     {
         player = GetComponent<Player>();
-        fireball = GetComponent<Fireball>();
     }
 
     void Update()
@@ -57,10 +55,7 @@ public class PlayerControl : MonoBehaviour
 
     void OnFire(InputValue value)
     {
-        if (fireball != null && value.isPressed)
-        {
-            fireball.Fire();
-        }
+        player.onFireEvent.TriggerOnFireEvent(value);
     }
 
     private void handleMovementInput()
