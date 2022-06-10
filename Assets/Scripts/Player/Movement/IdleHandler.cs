@@ -36,9 +36,5 @@ public class IdleHandler : MonoBehaviour
     private void StopMovement()
     {
         rigidBody2D.velocity = Vector2.zero;
-
-        // TODO: create AnimatePlayer script
-        player.animator.SetBool(Animator.StringToHash("run"), false);
-        player.animator.SetBool(Animator.StringToHash("idle"), true);
     }
 }
