@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
+        // GetComponent
         playerHealth = GetComponent<PlayerHealth>();
         playerStatus = GetComponent<PlayerStatus>();
         playerControl = GetComponent<PlayerControl>();
@@ -43,6 +44,7 @@ public class Player : MonoBehaviour
         onFireEvent = GetComponent<OnFireEvent>();
         parryEvent = GetComponent<ParryEvent>();
 
+        // GetComponentInChildren
         animator = GetComponentInChildren<Animator>();
     }
 }
